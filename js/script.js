@@ -1,21 +1,10 @@
-/* 
-Project Name: Modern Portfolio Website
-Description: A complete responsive modern portfolio website design
-             by using HTML CSS and Vanilla JavaScript from scratch.
-Author: Md Al Amin Hossen
-Github: https://github.com/MdRasen
-License: MIT License
-Copyright: 2023 ©MdRasen 
-*/
 
-// Typing animation
 var typed = new Typed(".typing", {
   strings: [
     "",
     "Web",
     "Web Designer",
     "Web Developer",
-    "Graphic Designer",
     "Content Creator",
   ],
   typeSpeed: 100,
@@ -23,7 +12,6 @@ var typed = new Typed(".typing", {
   loop: true,
 });
 
-// Aside
 const nav = document.querySelector(".nav"),
   navList = nav.querySelectorAll("li"),
   totalNavList = navList.length,
@@ -36,24 +24,20 @@ for (let i = 0; i < totalNavList; i++) {
     for (let k = 0; k < totalSection; k++) {
       allSection[k].classList.remove("back-section");
     }
-    //Loop for removing active class
     for (let j = 0; j < totalNavList; j++) {
       if (navList[j].querySelector("a").classList.contains("active")) {
         allSection[j].classList.add("back-section");
       }
       navList[j].querySelector("a").classList.remove("active");
     }
-    //Adding active class
     this.classList.add("active");
-    showSection(this); //Function call
-    //Nav click event - Hiding the nav menu
+    showSection(this);
     if (window.innerWidth < 1200) {
       asideSectionTogglerBtn();
     }
   });
 }
 function showSection(element) {
-  //Loop for removing active class
   for (let k = 0; k < totalSection; k++) {
     allSection[k].classList.remove("active");
   }
@@ -61,7 +45,6 @@ function showSection(element) {
   document.querySelector("#" + target).classList.add("active");
 }
 
-//For Hire me section
 document.querySelector(".hire-me").addEventListener("click", function () {
   showSection(this);
   updateNav(this);
@@ -80,7 +63,6 @@ function updateNav(element) {
   }
 }
 
-//For Nav Toggler Button
 const navTogglerBtn = document.querySelector(".nav-toggler"),
   aside = document.querySelector(".aside");
 navTogglerBtn.addEventListener("click", () => {
